@@ -11,8 +11,8 @@ It was tested on CentOS6.3 and ubuntu 12.10 server but it should work in most Li
 ###Requirements
 - Perl http://www.perl.org/
 - SolexaQA http://solexaqa.sourceforge.net/
-- Soapdenovo2 
-- Newbler 
+- Soapdenovo2 http://sourceforge.net/projects/soapdenovo2/ 
+- Newbler http://www.454.com/products/analysis-software/
 - Primer3 http://sourceforge.net/projects/primer3/
 - Bowtie http://bowtie-bio.sourceforge.net/
 
@@ -92,7 +92,6 @@ USAGE:
 perl de_novo_assembly_illu [-d directory path] [-i file_suffix] [-s insert_size] [-k kmer_size] [-p thread] [-o output_prefix]
 
 Description:
-
 parameter:
 -d  directory path
 -i  file_suffix
@@ -115,7 +114,6 @@ USAGE:
 perl overlap_fragments [-i input] [-o output] [-w window size] [-s step size]
 
 Description:
-	
 parameter:
 -i	input:Fasta-formated nucleotide sequences
 -o	output
@@ -137,11 +135,9 @@ perl primer_design [-input <FASTA>] [-num <primer number>] [-size_min <Primer_mi
 [-product_range <Primer_product_size_range>] [-threads <threads>] [-output <output>] 
 
 Description:
-	
 parameter:
 -input files
 	-input: Fasta-formated nucleotide sequences
-
 -primer_parameters
 	-size_min:	Primer_min_size		< default : 18 >
 	-size_max:	Primer_max_size		< default : 22 >
@@ -150,13 +146,10 @@ parameter:
 	-tm_min:	Primer_min_Tm		< default : 55 >
 	-tm_max:	Primer_max_Tm		< default : 65 >
 	-tm_opt:	Primer_opt_Tm		< default : 60 >
-
 	-product_range	Primer_product_size_range < default :150-280 >
-
 -output files
 	-output:	output_prefix 	< default :output.list,output_F.fa,output_R.fa >
 
-	
 Example: 
 perl primer_design_batch -input example.fa -output example
 perl primer_design_batch -input example.fa -output example -size_min 16 -size_opt 20 -size_max 24 -product_range 200-400
