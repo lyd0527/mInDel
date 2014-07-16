@@ -38,7 +38,7 @@ user@Lv:~/mInDel$ chmod 777 bin/* && cp bin/* /usr/local/bin (need root privileg
 user@Lv:~/mInDel$ mInDel 
 ```
 
-
+##[Tutorial](https://github.com/lyd0527/mInDel/blob/master/doc/Tutorial.md)
 
 ##Additional:
 ###Scripts under bin/ directory
