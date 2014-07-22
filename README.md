@@ -37,6 +37,35 @@ or add bin/* to system path
 user@Lv:~/mInDel$ chmod 777 bin/* && cp bin/* /usr/local/bin (need root privilege)
 user@Lv:~/mInDel$ mInDel 
 ```
+##Quick Start
+```
+user@Lv:~/mInDel$ mInDel
+mInDel v1.0 10-06-2014
+
+USAGE:
+
+perl mInDel [-a genotypeA] [-b genotypeB] [-c config_file] [-o output_dir]
+
+Description:
+
+parameter:
+-a  dir:seq_platform(illu/454):seq_type(paired/single), example: genotypeA:illu:paired
+-b  two modes:
+    1.with ref. genome. directly input genome FASTA file. For example: b.fa
+    2.without ref. genome. [seq_dir:seq_platform(illu/454)]. For example: genotypeB:454
+-c  config_file, default: ./mindel.config
+-o  output_dir
+
+Example: 
+perl mInDel -a A_dir:illu -b B_dir:454:ref -c mindel.config -o AB_InDel_project
+perl mInDel -a A_dir:illu -b B_dir/ref.fa -c mindel.config -o AB_InDel_project
+```
+##Test
+```
+user@Lv:~/mInDel$ cd example
+user@Lv:~/mInDel$ sh test.sh
+
+```
 
 ##[Tutorial](https://github.com/lyd0527/mInDel/blob/master/doc/Tutorial.md)
 
@@ -50,10 +79,10 @@ user@Lv:~/mInDel$ mInDel
 - primer_design_batch
 
 #### *trim_paired.sh *
-It is designed for cleaning paired-end reads. Excute `sh trim_paired.sh` under raw reads dir.
+It is designed for cleaning paired-end reads. Excute `sh trim_paired.sh phred_score min_length` under raw reads dir.
 
 #### *trim_single.sh*
-It is designed for cleaning paired-end reads. Excute `sh trim_single.sh` under raw reads dir.
+It is designed for cleaning paired-end reads. Excute `sh trim_single.sh phred_score min_length` under raw reads dir.
 
 #### *de_novo_assembly_454*
 de_novo_assembly_454 - Calling Newbler program to assemble 454 reads.
