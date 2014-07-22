@@ -65,6 +65,7 @@ perl mInDel -a A_dir:illu -b B_dir/ref.fa -c mindel.config -o AB_InDel_project
 user@Lv:~/mInDel$ cd example
 user@Lv:~/mInDel$ sh test.sh
 
+**********************************
 *Genotype A will be processed... *
 **********************************
 Step1:Reads Trimming...Done
