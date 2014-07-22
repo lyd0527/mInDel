@@ -65,6 +65,35 @@ perl mInDel -a A_dir:illu -b B_dir/ref.fa -c mindel.config -o AB_InDel_project
 user@Lv:~/mInDel$ cd example
 user@Lv:~/mInDel$ sh test.sh
 
+*Genotype A will be processed... *
+**********************************
+Step1:Reads Trimming...Done
+Step2:De novo assembly...Done
+Step3:Generate overlap fragments...Done
+Step4:Design probes ...Done
+
+**********************************
+*Genotype B will be processed... *
+**********************************
+genotypeB has reference genome sequences. Convert to reference mode!
+ignore Step1,Step2 !
+create database directory...Done
+
+**********************************
+*Step5:ePCR mapping is running...*
+**********************************
+# reads processed: 989
+# reads with at least one reported alignment: 916 (92.62%)
+# reads that failed to align: 17 (1.72%)
+# reads with alignments suppressed due to -m: 56 (5.66%)
+Reported 916 paired-end alignments to 1 output stream(s)
+**********************************
+
+**********************************
+*Step6:InDel screening...        *
+**********************************
+All jobs have finished. Enjoy~
+
 ```
 
 ##[Tutorial](https://github.com/lyd0527/mInDel/blob/master/doc/Tutorial.md)
