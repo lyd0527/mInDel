@@ -36,24 +36,24 @@ perl de_novo_assembly_454 -d trimmed_dir -i 95 -l 40 -p 20 -a 300 -o 454_project
 \*paired-end files literally have to include _1 and _2 suffixes such as \*_1.trimmed and \*_2.trimmed.
 
 
-####Step4: Split Sample B's contigs/chromosome to overlap fragments
+####Step3: Split Sample B's contigs/chromosome to overlap fragments
 ```
 overlap_framents -i B_contigs.fa -o B_contigs_300.fa -w 300 -s 150
 ```
 
-####Step5: Design primer probes
+####Step4: Design primer probes
 ```
 primer_design_batch -input B_contigs_300.fa -output B
 or
 primer_design_batch -input B_contigs_300.fa -output B -size_min 16 -size_opt 20 -size_max 24 -product_range 200-400
 ```
 
-####Step6: ePCR mapping to Sample A genome sequences and screening specific sites
+####Step5: ePCR mapping to Sample A genome sequences and screening specific sites
 ```
 ePCR_mapping -i B_probes -d A_contigs.fa -m 3 -t 10
 ```
 
-####Step7: Generate candidate InDel markers
+####Step6: Generate candidate InDel markers
 ```
 Indel_screening B.list target.list
 ```
