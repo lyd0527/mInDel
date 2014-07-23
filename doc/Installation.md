@@ -85,5 +85,5 @@ perl mInDel -a A_dir:illu -b B_dir/ref.fa -c mindel.config -o AB_InDel_project
 ```
 user@Lv: cd example
 user@Lv: chmod 777 test.sh 
-user@Lv:~/mInDel/example$ ./example.sh or sh test.sh 
+user@Lv:~/mInDel/example$ ./test.sh or sh test.sh 
 ```
