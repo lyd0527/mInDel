@@ -54,6 +54,6 @@ Reported 916 paired-end alignments to 1 output stream(s)
 **********************************
 *Step6:InDel screening...        *
 **********************************
-All jobs have finished. Enjoy~
+All jobs have been finished. Enjoy~
 
 ```
