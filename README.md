@@ -8,6 +8,7 @@ mInDel mainly implements five modules: the Pre-processing module, the De novo as
 
 It was tested on CentOS6.3 and ubuntu 12.10 server but it should work in most Linux servers.
 
+![workflow](https://github.com/lyd0527/mInDel/blob/master/doc/workflow.png)
 
 ### - [Installation](https://github.com/lyd0527/mInDel/blob/master/doc/Installation.md)
 ### - [Quick Start](https://github.com/lyd0527/mInDel/blob/master/doc/Quick_start.md)
