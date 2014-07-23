@@ -3,13 +3,6 @@
 
 mInDel facilitates detection of Insertion/Deletion(InDel) between different genotypes/species from next generation sequencing data. In this walkthrough the main functionality of mInDel will be demonstrated by mining the InDel of two genotypes.
 
-###Requirements
-- Perl http://www.perl.org/
-- SolexaQA http://solexaqa.sourceforge.net/
-- Primer3 http://sourceforge.net/projects/primer3/
-- Bowtie http://bowtie-bio.sourceforge.net/
-
-
 ####Step1: Pre-processing
 Single
 ```
