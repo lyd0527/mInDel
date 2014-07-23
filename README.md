@@ -13,7 +13,7 @@ It was tested on CentOS6.3 and ubuntu 12.10 server but it should work in most Li
 ### - [Quick Start](https://github.com/lyd0527/mInDel/blob/master/doc/Quick_start.md)
 ### - [Step By Step Tutorial](https://github.com/lyd0527/mInDel/blob/master/doc/Step_by_step_tutorial.md)
 ### - [Additional](https://github.com/lyd0527/mInDel/blob/master/doc/Additional.md)
-*Subroutine may be also run as separate program for different purposes.*
+*Subroutines may be also run as separate programs for different purposes.*
 
 
 ### QUESTIONS AND COMMENTS:
