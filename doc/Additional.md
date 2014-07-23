@@ -1,5 +1,6 @@
-##Additional: Subroutine may be also run as separate program for different purposes.
-###Scripts under bin/ directory
+##Additional: 
+Subroutines may be also run as separate programs for different purposes.
+###Subroutines under bin/ directory
 - trim_paired.sh
 - trim_single.sh
 - de_novo_assembly_454
