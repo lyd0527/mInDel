@@ -3,18 +3,25 @@
 
 mInDel facilitates detection of Insertion/Deletion(InDel) between different genotypes/species from next generation sequencing data. In this walkthrough the main functionality of mInDel will be demonstrated by mining the InDel of two genotypes.
 
-####Step1: Pre-processing
-Single
-```
-sh trim_single.sh
-```
-Paired-end
-```
-sh trim_paired.sh
-```
-*input files literally must be formatted by Fastq.
+###Genotype A and B
 
-\*_1.fastq and \*_2.fastq represent paired-end type.
+####- Processing Genotype A (Step1, 2, 3, 4)
+
+####Step1: Reads cleaning
+illumina sequencing reads
+```
+sh trim_illu.sh 20 40
+```
+454 sequencing reads
+```
+sh trim_454.sh 20 40
+```
+
+*- Input files literally must be formatted by Fastq and suffix is *.fastq.*
+
+*- Paired-end reads must be named by \*_1.fastq and \*_2.fastq.*
+
+*- Both support for mixed single and paired-end reads mode.*
 
 ####Step2: *De novo* assembly
 For illumina (*supported mix mode: paired where possible, unpaired otherwise*):
@@ -29,24 +36,32 @@ perl de_novo_assembly_454 -d trimmed_dir -i 95 -l 40 -p 20 -a 300 -o 454_project
 \*paired-end files literally have to include _1 and _2 suffixes such as \*_1.trimmed and \*_2.trimmed.
 
 
-####Step3: Split Sample B's contigs/chromosome to overlap fragments
+####Step3: Split Genotype A's contigs/chromosome to overlap fragments
 ```
-overlap_framents -i B_contigs.fa -o B_contigs_300.fa -w 300 -s 150
+overlap_framents -i A_contigs.fa -o A_contigs_300.fa -w 300 -s 150
 ```
 
 ####Step4: Design primer probes
 ```
-primer_design_batch -input B_contigs_300.fa -output B
+primer_design_batch -input A_contigs_300.fa -output A
 or
-primer_design_batch -input B_contigs_300.fa -output B -size_min 16 -size_opt 20 -size_max 24 -product_range 200-400
+primer_design_batch -input A_contigs_300.fa -output A -size_min 16 -size_opt 20 -size_max 24 -product_range 200-400
 ```
 
-####Step5: ePCR mapping to Sample A genome sequences and screening specific sites
+####- Processing B 
+**1. with reference genome**
+use the reference file as target database directly.
+
+**2. without reference genome (Step 1, 2)**
+Repeat the previous step1,2 and take assemblied contigs as target database.
+
+
+####Step5: ePCR mapping to genotype B's genome sequences and screening specific sites
 ```
-ePCR_mapping -i B_probes -d A_contigs.fa -m 3 -t 10
+ePCR_mapping -i A_probes -d B_contigs.fa/B_ref.fa -m 3 -s 600 -t 10
 ```
 
 ####Step6: Generate candidate InDel markers
 ```
-Indel_screening B.list target.list
+Indel_screening A_probes.list target_B.size
 ```
