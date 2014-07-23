@@ -21,7 +21,7 @@ Example:
 perl mInDel -a A_dir:illu -b B_dir:454:ref -c mindel.config -o AB_InDel_project
 perl mInDel -a A_dir:illu -b B_dir/ref.fa -c mindel.config -o AB_InDel_project
 ```
-##Testing example
+##Example testing 
 ```
 user@Lv:~/mInDel$ cd example
 user@Lv:~/mInDel$ sh test.sh
