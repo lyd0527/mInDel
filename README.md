@@ -16,7 +16,7 @@ It was tested on CentOS6.3 and ubuntu 12.10 server but it should work in most Li
 *Subroutine may be also run as separate program for different purposes.*
 
 
-**QUESTIONS AND COMMENTS:**
+### QUESTIONS AND COMMENTS:
 Please send your any comments to Dr. Yuanda Lv, Lyd0527@jaas.ac.cn.
 
 *Copyright (c) 2014, Institute of Biotechnology, Jiangsu Academy of Agricultural Sciences.*
