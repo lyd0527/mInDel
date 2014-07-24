@@ -18,8 +18,8 @@ Here are the installation instructions for CentOS and Ubuntu Linux system.
 - Perl modules
 ```
 user@Lv: sudo cpan
-cpan[1]>Getopt::Long
-cpan[2]>Config::Tiny
+cpan[1]> install Getopt::Long
+cpan[2]> install Config::Tiny
 ```
 
 - SolexaQA
