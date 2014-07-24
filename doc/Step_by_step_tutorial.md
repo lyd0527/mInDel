@@ -19,7 +19,7 @@ sh trim_454.sh 20 40
 
 *- Input files literally must be formatted by Fastq and suffix is *.fastq.*
 
-*- Paired-end reads must be named by \*_1.fastq and \*_2.fastq.*
+*- Paired-end reads must be named by \*_1.fastq and \*_2.fastq.
 
 *- Both support for mixed single and paired-end reads mode.*
 
