@@ -4,9 +4,9 @@
 
 mInDel allows to find InDel variations between two or more genotypes and to develop InDel markers. mInDel requires next generation sequencing data of genomic DNA. It may be used for measuring InDel variation between populations, for genome wide association studies and for QTL fine mapping.
 
-mInDel mainly implements five modules: the Pre-processing module, the De novo assembly module, the overlap PCR primer design in batch module ,the ePCR mapping module and InDel screening and marker development module. 
+mInDel mainly implements five modules: the Pre-processing module, the *De novo* assembly module, the Overlap PCR primer design in batch module ,the ePCR mapping module and the InDel screening and marker development module. 
 
-It was tested on CentOS6.3 and ubuntu 12.10 server but it should work in most Linux servers.
+It was tested on CentOS 6.3 and Ubuntu 12.10 server but it should work on most Linux servers.
 
 #### - [Installation](https://github.com/lyd0527/mInDel/blob/master/doc/Installation.md)
 #### - [Quick Start](https://github.com/lyd0527/mInDel/blob/master/doc/Quick_start.md)
