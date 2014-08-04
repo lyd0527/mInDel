@@ -8,12 +8,12 @@ Subroutines may be also run as separate programs for different purposes.
 - overlap_fragments
 - primer_design_batch
 
-#### *trim_paired.sh *
+#### *trim_illu.sh*
 It is designed for cleaning illumina reads. Excute `sh trim_illu.sh phred_score min_length` under raw reads dir.
 ```
 user@Lv:~/mInDel/bin$ sh trim_illu.sh 20 40
 ```
-#### *trim_single.sh*
+#### *trim_454.sh*
 It is designed for cleaning 454 reads. Excute `sh trim_454.sh phred_score min_length` under raw reads dir.
 ```
 user@Lv:~/mInDel/bin$ sh trim_454.sh 20 40
