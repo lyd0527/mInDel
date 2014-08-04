@@ -2,11 +2,11 @@
 Subroutines may be also run as separate programs for different purposes.
 ###Subroutines under bin/ directory
 - [trim_illu.sh](https://github.com/lyd0527/mInDel/blob/master/doc/Additional.md#trim_illush)
-- trim_454.sh
-- de_novo_assembly_454
-- de_novo_assembly_illu
-- overlap_fragments
-- primer_design_batch
+- [trim_454.sh](https://github.com/lyd0527/mInDel/blob/master/doc/Additional.md#trim_454sh)
+- [de_novo_assembly_454](https://github.com/lyd0527/mInDel/blob/master/doc/Additional.md#de_novo_assembly_454)
+- [de_novo_assembly_illu](https://github.com/lyd0527/mInDel/blob/master/doc/Additional.md#de_novo_assembly_illu)
+- [overlap_fragments](https://github.com/lyd0527/mInDel/blob/master/doc/Additional.md#overlap_fragments)
+- [primer_design_batch](https://github.com/lyd0527/mInDel/blob/master/doc/Additional.md#primer_design_batch)
 
 #### *trim_illu.sh*
 It is designed for cleaning illumina reads. Excute `sh trim_illu.sh phred_score min_length` under raw reads dir.
