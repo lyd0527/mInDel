@@ -1,8 +1,8 @@
 ##Additional: 
 Subroutines may be also run as separate programs for different purposes.
 ###Subroutines under bin/ directory
-- trim_paired.sh
-- trim_single.sh
+- trim_illu.sh
+- trim_454.sh
 - de_novo_assembly_454
 - de_novo_assembly_illu
 - overlap_fragments
