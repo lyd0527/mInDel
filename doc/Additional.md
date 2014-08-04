@@ -1,7 +1,7 @@
 ##Additional: 
 Subroutines may be also run as separate programs for different purposes.
 ###Subroutines under bin/ directory
-- trim_illu.sh
+- [trim_illu.sh](https://github.com/lyd0527/mInDel/blob/master/doc/Additional.md#trim_illush)
 - trim_454.sh
 - de_novo_assembly_454
 - de_novo_assembly_illu
