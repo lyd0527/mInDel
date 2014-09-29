@@ -37,8 +37,7 @@ user@Lv: make
 user@Lv: sudo cp SOAPdenovo-63mer SOAPdenovo-127mer /usr/local/bin
 ```
 
-- Newbler 
-  obtain from http://www.454.com/products/analysis-software/
+- Newbler (454 sequencing platform, http://www.454.com/products/analysis-software/)
 - Primer3
 ```
 user@Lv: wget http://sourceforge.net/projects/primer3/files/latest/download?source=directory
