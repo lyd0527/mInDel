@@ -31,8 +31,8 @@ user@Lv: sudo cp SolexaQA_v.2.5/*.pl /usr/local/bin
 - Soapdenovo2 (For illumina sequencing platform)
 ```
 user@Lv: wget http://sourceforge.net/projects/soapdenovo2/files/latest/download
-user@Lv: tar xvzf SOAPdenovo2-src-r240.tgz
-user@Lv: cd SOAPdenovo2-src-r240/
+user@Lv: tar xvzf SOAPdenovo2-src-r***.tgz
+user@Lv: cd SOAPdenovo2-src-r***/
 user@Lv: make
 user@Lv: sudo cp SOAPdenovo-63mer SOAPdenovo-127mer /usr/local/bin
 ```
@@ -45,8 +45,8 @@ sudo apt-get install soapdenovo2
 - Primer3
 ```
 user@Lv: wget http://sourceforge.net/projects/primer3/files/latest/download?source=directory
-user@Lv: tar xzvf primer3-src-2.3.6.tar.gz
-user@Lv: cd primer3-src-2.3.6/src
+user@Lv: tar xzvf primer3-src-2.*.*.tar.gz
+user@Lv: cd primer3-src-2.*.*/src
 user@Lv: make
 user@Lv: sudo cp -r long_seq_tm_test ntdpal ntthal oligotm primer3_core primer3_config/ /usr/local/bin/
 ```
