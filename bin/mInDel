@@ -49,7 +49,7 @@ parameter:
 
 Example:
 1. mInDel -a A_dir:illu -b B_dir:454:ref -c mindel.config -o AB_InDel_project
-2. mInDel -a A_dir:illu -b B_dir/B.fa -c mindel.config -o AB_InDel_project
+2. mInDel -a A_dir:illu -b B_dir\/B.fa -c mindel.config -o AB_InDel_project
 
 /;
 
