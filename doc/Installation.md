@@ -31,7 +31,7 @@ user@Lv: sudo cp SolexaQA_v.2.5/*.pl /usr/local/bin
 - Soapdenovo2 (For illumina sequencing platform)
 ```
 user@Lv: wget http://sourceforge.net/projects/soapdenovo2/files/latest/download
-user@Lv: tar cvzf SOAPdenovo2-src-r240.tgz
+user@Lv: tar xvzf SOAPdenovo2-src-r240.tgz
 user@Lv: cd SOAPdenovo2-src-r240/
 user@Lv: make
 user@Lv: sudo cp SOAPdenovo-63mer SOAPdenovo-127mer /usr/local/bin
