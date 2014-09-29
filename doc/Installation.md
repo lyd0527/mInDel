@@ -24,7 +24,7 @@ cpan[2]> install Config::Tiny
 
 - SolexaQA
 ```
-user@Lv: wget http://sourceforge.net/projects/solexaqa/files/latest/download?source=files
+user@Lv: wget http://sourceforge.net/projects/solexaqa/files/src/SolexaQA_v.2.5.zip/download
 user@Lv: unzip SolexaQA_v.2.5.zip
 user@Lv: sudo cp SolexaQA_v.2.5/*.pl /usr/local/bin
 ```
