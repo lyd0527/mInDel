@@ -36,6 +36,10 @@ user@Lv: cd SOAPdenovo2-src-r240/
 user@Lv: make
 user@Lv: sudo cp SOAPdenovo-63mer SOAPdenovo-127mer /usr/local/bin
 ```
+For ubuntu:
+```
+sudo apt-get install soapdenovo2
+```
 - Newbler 
   obtain from http://www.454.com/products/analysis-software/
 - Primer3
