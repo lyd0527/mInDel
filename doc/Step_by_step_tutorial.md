@@ -10,23 +10,19 @@ mInDel facilitates detection of Insertion/Deletion(InDel) between different geno
 ####Step1: Reads cleaning
 illumina sequencing reads
 ```
-sh trim_illu.sh 20 40
-```
-454 sequencing reads
-```
-sh trim_454.sh 20 40
+trim_fastq -p 20 -l 40 -d A_raw_fastq/
 ```
 
 *- Input files literally must be formatted by Fastq and suffix is *.fastq.*
 
-*- Paired-end reads must be named by \*_1.fastq and \*_2.fastq.
+*- Paired-end reads must be named by \*\_1.fastq and \*\_2.fastq.
 
-*- Both support for mixed single and paired-end reads mode.*
+*- support for single, paired-end reads and mixed mode.*
 
 ####Step2: *De novo* assembly
 For illumina (*supported mix mode: paired where possible, unpaired otherwise*):
 ```
-de_novo_assembly -d trimmed_dir -i trimmed -s 300 -k 45 -p 20 -o illu_project
+de_novo_assembly_illu -d trimmed_dir -i trimmed -s 300 -k 45 -p 20 -o illu_project
 ```
 For 454:
 ```
@@ -43,9 +39,7 @@ overlap_framents -i A_contigs.fa -o A_contigs_300.fa -w 300 -s 150
 
 ####Step4: Design primer probes
 ```
-primer_design_batch -input A_contigs_300.fa -output A
-or
-primer_design_batch -input A_contigs_300.fa -output A -size_min 16 -size_opt 20 -size_max 24 -product_range 200-400
+probes_design -input A_contigs_300.fa -output A -size_min 16 -size_opt 20 -size_max 24 -product_range 200-400
 ```
 
 ####- Processing B 
@@ -58,10 +52,10 @@ Repeat the previous step1,2 and take assemblied contigs as target database.
 
 ####Step5: ePCR mapping to genotype B's genome sequences and screening specific sites
 ```
-ePCR_mapping -i A_probes -d B_contigs.fa/B_ref.fa -m 3 -s 600 -t 10
+mapping -i A_probes -d B_contigs.fa/B_ref.fa -m 3 -s 600 -t 10
 ```
 
 ####Step6: Generate candidate InDel markers
 ```
-Indel_screening A_probes.list target_B.size
+Indel_screening A_probes.list target_B.size | awk '($8!=$9)' >candidate_InDel_markers
 ```

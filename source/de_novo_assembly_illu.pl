@@ -1,0 +1,88 @@
+#!/usr/bin/perl -w
+
+=head1 NAME
+
+de_novo_assembly_illu.
+
+=head1 DESCRIPTION
+
+allows you to assemble a set of contiguous sequences (contigs) with the SOAPdenovo2 program..
+ 
+ Author	: Yuanda Lv
+ E-mail	: Lyd0527@126.com
+ Date	: 10/07/2013
+ Version: 1.0
+=cut
+
+use strict;
+use Getopt::Long;
+
+my $usage = q/
+de_novo_assembly_illu v1.0 10-07-2013
+
+USAGE:
+
+de_novo_assembly_illu [-d dir_path] [-i fastq_file_suffix] [-s insert_size] [-k kmer_size] [-p thread] [-o output_prefix]
+
+Description:
+
+parameter:
+-d  directory path
+-i  file_suffix
+-s  insert size of library
+-k  kmer size, default 45;
+-p  num of thread, default 10;
+-o  output_prefix
+
+Example: de_novo_assembly_illu -d trimmed_dir -i trimmed -s 300 -k 45 -p 20 -o illu_project
+/;
+
+die $usage."\n" if (@ARGV<1);
+
+
+my $dir; # or $dir-cwd();
+my $suffix;
+my $size=300;
+my $thread=10;
+my $kmer=45;
+my $output="illu_project";
+
+GetOptions(
+	'd:s'	=>\$dir,
+	'i:s'	=>\$suffix,
+	's:n'	=>\$size,
+	'k:n'	=>\$kmer,
+	'p:n'	=>\$thread,
+	'o:s'	=>\$output,
+);
+
+#generate configure file
+
+$dir=~s/\/$//g;
+open (OUT, ">config_file") || die "cannot open file.";
+print OUT "max_rd_len=1000\n\n";
+
+open( my $pair, "ls $dir | grep $suffix | sed 's/_[12]\.$suffix//g'|uniq -d |") or die "$!";
+open( my $single, "ls $dir | grep $suffix | sed 's/_[12]\.$suffix//g'|uniq -u |") or die "$!";
+
+while ( <$pair> ) {
+	chomp;
+	print OUT "[LIB]\navg_ins=$size\nreverse_seq=0\nasm_flags=1\nrank=1\nq1=$dir\/$_\_1.$suffix\nq2=$dir\/$_\_2.$suffix\n\n";
+}
+
+while ( <$single> ) {
+    chomp;
+	print OUT "[LIB]\nreverse_seq=0\nasm_flags=1\nrank=1\nq=$dir\/$_\n";;
+}
+
+#calling soapdenovo to assemble
+
+print "Starting de novo assembly.....\n";
+
+#`SOAPdenovo-127mer all -o $output -s config_file -K $kmer -p $thread 2>>/dev/null`;
+`SOAPdenovo-127mer all -o $output -s config_file -K $kmer -p $thread`;
+
+print "Done\n-----\n";
+
+print "Assemly job  has been finished.Good Luck!!!\n\n";
+

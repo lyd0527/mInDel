@@ -2,9 +2,9 @@
 
 ###Introduction
 
-mInDel allows to find InDel variations between two or more genotypes and to develop InDel markers. mInDel requires next generation sequencing data of genomic DNA. It may be used for measuring InDel variation between populations, for genome wide association studies and for QTL fine mapping.
+mInDel allows to find InDel variations between two or more genotypes and to develop InDel markers. Together with its independence to a reference genome and the downstream genotyping-aware versatility, mInDel holds great values to researchers in the fields of molecular genetics and evolutionary studies. 
 
-mInDel mainly implements five modules: the Pre-processing module, the *De novo* assembly module, the Overlap PCR primer design in batch module ,the ePCR mapping module and the InDel screening and marker development module. 
+mInDel mainly implements five modules: Pre-processing module, *De novo* assembly module, Overlap probes design module, paired-end mapping module and InDel screening and marker development module. 
 
 It was tested on CentOS 6.3 and Ubuntu 12.10 server but it should work on most Linux servers.
 
@@ -12,12 +12,13 @@ It was tested on CentOS 6.3 and Ubuntu 12.10 server but it should work on most L
 #### - [Quick Start](https://github.com/lyd0527/mInDel/blob/master/doc/Quick_start.md)
 #### - [Step By Step Tutorial](https://github.com/lyd0527/mInDel/blob/master/doc/Step_by_step_tutorial.md) 
 #### - [Additional](https://github.com/lyd0527/mInDel/blob/master/doc/Additional.md) 
-*Subroutines may be also run as separate programs for different purposes.*
+*Scripts may be also ran as separate programs for different purposes.*
 
 ### mInDel workflow.
-Graphic summary of mInDel workflow: the pipeline accepts NGS data as input and then proceeds automatically to perform several independent analyses, most of which can be selected or excluded according to the user’s needs. Module 1: Pre-process analysis. Module 2: De novo assembly (Illumina or 454 sequencing platform). Module 3: Overlap primer design. Module 4: ePCR mapping and specificity screening. Module 5: InDel screening and marker development.
-![workflow](https://github.com/lyd0527/mInDel/blob/master/doc/)
 
+**mInDel workflow.** mInDel generates a pool of probe pairs based on input sequences, infers the sizes in between these probes using improved paired-end mapping algorithm, and screens for polymorphic probes as candidate InDel markers. The pipeline accepts NGS data as input and then proceeds automatically to perform several independent analyses, most of which can be selected or excluded according to the user’s needs. Module 1: Pre-processing analysis. Module 2: De novo assembly (Illumina or 454 sequencing platform). Module 3: Overlap probes design. Module 4: paired-end mapping and specificity screening. Module 5: InDel screening and marker development.
+
+![workflow](https://github.com/lyd0527/mInDel/blob/master/doc/workflow.png)
 
 ### QUESTIONS AND COMMENTS:
 Please send your any comments to Dr. Yuanda Lv, Lyd0527@jaas.ac.cn.
