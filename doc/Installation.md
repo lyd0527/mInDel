@@ -9,7 +9,7 @@
 - Bowtie http://bowtie-bio.sourceforge.net/
 
 
-###INSTALLATION
+###Installation
 Here are the installation instructions for CentOS and Ubuntu Linux system.
 
 **1. Install dependent apps and add them to system path.**
