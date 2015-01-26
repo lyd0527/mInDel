@@ -90,5 +90,5 @@ E-mail bug reports to: <Lyd0527@jaas.ac.cn>.
 ```
 [maize@corn86 ~]$ cd example
 [maize@corn86 ~]$ chmod 777 test.sh 
-user@Lv:~/mInDel/example$ ./test.sh or sh test.sh 
+[maize@corn86 ~]$ ./test.sh or sh test.sh 
 ```
