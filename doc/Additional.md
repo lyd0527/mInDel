@@ -1,5 +1,6 @@
 ##Additional: 
-Subroutines may be also run as separate programs for different purposes.
+All scripts may be also run as separate programs for different purposes.
+
 ###Subroutines under bin/ directory
 - [trim_fastq](https://github.com/lyd0527/mInDel/blob/master/doc/Additional.md#trim_fastq)
 - [de_novo_assembly_454](https://github.com/lyd0527/mInDel/blob/master/doc/Additional.md#de_novo_assembly_454)
