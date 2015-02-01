@@ -96,7 +96,7 @@ mkdir -p 3.InDel_markers
 overlap_fragments -i $a -o 1.probes/${a%.*}_fragments.fa -w $win -s $step
 probes_design -input 1.probes/${a%.*}_fragments.fa -output 1.probes/${a%.*}_probes -size_min $size_min -size_opt $size_opt -size_max $size_max -product_range $fragment_range
 mv p3_* 1.probes
-mapping -i 1.probes/${a%.*}_probes -d $a -s $fragment_max -m $mismatch -t $thread -o ${b%.*}
+mapping -i 1.probes/${a%.*}_probes -d $b -s $fragment_max -m $mismatch -t $thread -o ${b%.*}
 mv ${b%.*}.sam ${b%.*}.sizes 2.mapping
 InDel_screening 1.probes/${a%.*}_probes.list 2.mapping/${b%.*}.sizes | awk '($8!=$9)' > 3.InDel_markers/${a%.*}_${b%.*}_InDel_candidate_markers
 
