@@ -92,7 +92,6 @@ done
 
 
 ###manager results
-echo -e "\e[1;32m>>>>>>Starting<<<<<<\e[0m"
 mkdir -p 1.probes
 mkdir -p 2.mapping
 mkdir -p 3.InDel_markers
@@ -101,7 +100,6 @@ mkdir -p 3.InDel_markers
 #################################################################
 ###step1.generate overlap fragments by sliding window algorithm.
 #################################################################
-echo -e "  \e[1;32m>>>>>>Generate overlap fragments\e[0m"
 overlap \
 	-i $a \
 	-o 1.probes/${a%.*}_fragments.fa \
@@ -112,7 +110,6 @@ overlap \
 ###step2.calling primer3 program 
 ###      to design primer probes in batch mode.
 #################################################################
-echo -e "  \e[1;32m>>>>>>Design primer probes\e[0m"
 probes_design \
 	-input 1.probes/${a%.*}_fragments.fa\
 	-output 1.probes/${a%.*}_probes \
@@ -127,8 +124,7 @@ mv p3_* 1.probes
 ###step3.perform paired-end mapping 
 ###      to infer targeted fragment sizes.
 #################################################################
-echo -e "  \e[1;32m>>>>>>Specific screening\e[0m"
-echo -e "  >>>>>>mapping to multiple samples in turn"
+
 for i in $b/*
 do
 	mapping \
@@ -145,11 +141,8 @@ done
 #################################################################
 ###step4.screen InDel markers.
 #################################################################
-echo -e "  \e[1;32m>>>>>>Merge all potential InDel info.\e[0m"
 merge_col \
 	-k -e "-" \
 	1.probes/${a%.*}_probes.list \
 	2.mapping/*.sizes \
 	>3.InDel_markers/raw_indel.tab
-
-echo -e "\e[1;32m>>>>>>--------<<<<<<\e[0m"

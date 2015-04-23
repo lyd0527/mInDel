@@ -91,17 +91,15 @@ do
 done
 
 
-
 ###manager results
-echo -e "\e[1;32m>>>>>>Starting<<<<<<\e[0m"
 mkdir -p 1.probes
 mkdir -p 2.mapping
 mkdir -p 3.InDel_markers
 
+###step running
 #################################################################
 ###step1.generate overlap fragments by sliding window algorithm.
 #################################################################
-echo -e "  \e[1;32m>>>>>>Generate overlap fragments\e[0m"
 overlap \
 	-i $a \
 	-o 1.probes/${a%.*}_fragments.fa \
@@ -112,7 +110,6 @@ overlap \
 ###step2.calling primer3 program 
 ###      to design primer probes in batch mode.
 #################################################################
-echo -e "  \e[1;32m>>>>>>Design primer probes\e[0m"
 probes_design \
 	-input 1.probes/${a%.*}_fragments.fa\
 	-output 1.probes/${a%.*}_probes \
@@ -127,8 +124,6 @@ mv p3_* 1.probes
 ###step3.perform paired-end mapping 
 ###      to infer targeted fragment sizes.
 #################################################################
-echo -e "  \e[1;32m>>>>>>Specific screening\e[0m"
-echo -e "  >>>>>>mapping to sample A"
 mapping \
 	-i 1.probes/${a%.*}_probes \
 	-d $a \
@@ -138,8 +133,6 @@ mapping \
 	-o ${a%.*}
 mv ${a%.*}.sam ${a%.*}.sizes 2.mapping
 
-echo -e "  \e[1;32m>>>>>>Mapping to targeted seq.\e[0m"
-echo -e "  >>>>>>mapping to sample B"
 mapping \
 	-i 1.probes/${a%.*}_probes \
 	-d $b \
@@ -150,10 +143,10 @@ mapping \
 mv ${b%.*}.sam ${b%.*}.sizes 2.mapping
 
 
+
 #################################################################
 ###step4.screen InDel markers.
 #################################################################
-echo -e "  \e[1;32m>>>>>>InDel screening\e[0m"
 InDel_screening \
 	1.probes/${a%.*}_probes.list \
 	2.mapping/${a%.*}.sizes >tmp
@@ -163,5 +156,3 @@ InDel_screening \
 	| awk '($9!=$10)' \
 	> 3.InDel_markers/${a%.*}_${b%.*}_InDel_candidate_markers
 rm -rf tmp
-
-echo -e "\e[1;32m>>>>>>--------<<<<<<\e[0m"
