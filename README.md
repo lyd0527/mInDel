@@ -1,6 +1,6 @@
 ##mInDel
 
-### Version 0.2.0 04/23/2014
+### Version 0.2.0 04/23/2015
 
 - Added multi-samples InDel detecting.
 - Added two main program. mInDel_pair was designed for two samples; mInDel_pop was designed for multi-samples

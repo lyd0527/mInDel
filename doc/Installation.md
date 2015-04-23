@@ -1,6 +1,6 @@
 ##Installation
 
-- updated 04/23/2014
+- updated 04/23/2015
 - added check_deps script. `check_deps.sh`
 - added non-root user install script. `install_nonroot.sh`
 
