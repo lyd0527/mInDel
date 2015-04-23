@@ -43,7 +43,7 @@ my $input;
 my $db;
 my $mismatch=0;
 my $thread=4;
-my $product=600;
+my $product=800;
 my $output;
 GetOptions(
 	'i:s'	=>\$input,
@@ -54,27 +54,26 @@ GetOptions(
 	't:n'	=>\$thread,
 );
 
-my $formatdb="bowtie-build $db db\/db >/dev/null";
-$db =~ s/\..*$//;
+my @list=split(/\//,$db);
+my @list2=split(/\./,$list[-1]);
+
+my $formatdb="bowtie-build $db db\/$list2[0] >/dev/null";
 my $epcr1="bowtie -f -S -p $thread -a -X $product -v $mismatch $db -1 $input\_1.fa -2 $input\_2.fa | tee $output.sam | grep -v -P '\\*\t0\t0\t\\*|@|-' | cut -f 1,9 | awk '!x[\$0]++'|awk '{a[\$1]=a[\$1]\?a[\$1]\",\"\$2:\$2} END{for(i in a)print i\"\\t\"a[i]}'>$output.sizes";
-my $epcr2="bowtie -f -S -p $thread -a -X $product -v $mismatch db/db -1 $input\_1.fa -2 $input\_2.fa | tee $output.sam | grep -v -P '\\*\t0\t0\t\\*|@|-'| cut -f 1,9 | awk '!x[\$0]++'|awk '{a[\$1]=a[\$1]\?a[\$1]\",\"\$2:\$2} END{for(i in a)print i\"\\t\"a[i]}'>$output.sizes";
+my $epcr2="bowtie -f -S -p $thread -a -X $product -v $mismatch db\/$list2[0] -1 $input\_1.fa -2 $input\_2.fa | tee $output.sam | grep -v -P '\\*\t0\t0\t\\*|@|-'| cut -f 1,9 | awk '!x[\$0]++'|awk '{a[\$1]=a[\$1]\?a[\$1]\",\"\$2:\$2} END{for(i in a)print i\"\\t\"a[i]}'>$output.sizes";
+
+#print head
+`touch $output.sizes`;
+`echo -e "ID\t$list[-1]" >$output.sizes`;
 
 if(-e "$db.1.ebwt") {
 	system($epcr1);
+}elsif(-e "db\/$list2[0].1.ebwt"){
+	system($epcr2);
 }else{
-	if (!(-e "db")){
-		mkdir "db";
-	}
+	`mkdir -p db`;
 	printf "bowtie_db doesn't exist. formatting it now\n";
 	system($formatdb);
 	system($epcr2);
 }
-
-#merge
-#awk '{a[$1]=a[$1]?a[$1]","$2:$2} END{for(i in a)print i,a[i]}' i
-#cut -f 1,9 |awk '!x[$0]++'|awk '{a[$1]=a[$1]?a[$1]","$2:$2} END{for(i in a)print i"\t"a[i]}'
-#region
-#awk '{print $1"\t"$3"\t"$8+$6-$9"\t"$8+$6"\t"$9}' 
-
 
 

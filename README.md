@@ -1,5 +1,13 @@
 ##mInDel
 
+### Version 0.2.0 04/23/2014
+
+- Added multi-samples InDel detecting.
+- Added two main program. mInDel_pair was designed for two samples; mInDel_pop was designed for multi-samples
+- Added dependencies checking script.
+- Added non root install script.
+- More summary information is added, such as position information for per primer pair.
+
 ###Introduction
 
 mInDel allows to find InDel variations between two or more genotypes and to develop InDel markers. Together with its independence to a reference genome and the downstream genotyping-aware versatility, mInDel holds great values to researchers in the fields of molecular genetics and evolutionary studies. 

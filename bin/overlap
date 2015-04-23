@@ -64,7 +64,10 @@ while (<IN>){
 	my $length=length($seq);
 	for ($start=0;$start<$length;$start=$start+$step_size,$count=$count+1){
 		$fragment=substr($seq,$start,$win_size);
-		print OUT ">$head"."_".$count."\n".$fragment."\n";
+		$start=$start+1;
+		my $length2=length($fragment);
+		my $end=$start+$length2;
+		print OUT ">$head"."_".$count."_".$start."_".$end."\n".$fragment."\n";
 	}
 }
 close IN;

@@ -1,7 +1,5 @@
 ##Quick Start
 
-###Sample A vs Sample B
-
 ###Pre-assembly Fastq files
 
 - Trimming quality and length
@@ -20,8 +18,13 @@ de_novo_assembly_454 -d A_raw_fastq/ -i 95 -l 40 -p 20 -a 300 -o 454_project
 ```
 
 ###InDel marker development
+
+- Two Sample
 ```
-mInDel -a A.fasta -b B.fasta -t 10
+mInDel_pair -a A.fasta -b B.fasta -t 10
 ```
 
-\*\*mInDel pipeline include four modules: *overlap_fragment*, *probes_design*, *mapping* and *InDel screening*.
+- multiple Samples
+```
+mInDel_pop -a A.fasta -b B_dir -t 10
+```

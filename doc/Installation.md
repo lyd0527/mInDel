@@ -1,5 +1,9 @@
 ##Installation
 
+- updated 04/23/2014
+- added check_deps script. `check_deps.sh`
+- added non-root user install script. `install_nonroot.sh`
+
 ###Requirements
 - Perl http://www.perl.org/
 - SolexaQA http://solexaqa.sourceforge.net/
@@ -86,9 +90,14 @@ Usage: mInDel [OPTION]
 E-mail bug reports to: <Lyd0527@jaas.ac.cn>.
 ```
 
+For non-root user
+```
+sh install_nonroot.sh
+```
+
 **3. Example testing**
 ```
-[maize@corn86 ~]$ cd example
-[maize@corn86 ~]$ chmod 777 test.sh 
+[maize@corn86 ~]$ sh check_deps.sh  #### check deps.
+[maize@corn86 ~]$ cd example && chmod 777 test.sh
 [maize@corn86 ~]$ ./test.sh or sh test.sh 
 ```
