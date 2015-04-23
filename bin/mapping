@@ -58,8 +58,8 @@ my @list=split(/\//,$db);
 my @list2=split(/\./,$list[-1]);
 
 my $formatdb="bowtie-build $db db\/$list2[0] >/dev/null";
-my $epcr1="bowtie -f -S -p $thread -a -X $product -v $mismatch $db -1 $input\_1.fa -2 $input\_2.fa | tee $output.sam | grep -v -P '\\*\t0\t0\t\\*|@|-' | cut -f 1,9 | awk '!x[\$0]++'|awk '{a[\$1]=a[\$1]\?a[\$1]\",\"\$2:\$2} END{for(i in a)print i\"\\t\"a[i]}'>$output.sizes";
-my $epcr2="bowtie -f -S -p $thread -a -X $product -v $mismatch db\/$list2[0] -1 $input\_1.fa -2 $input\_2.fa | tee $output.sam | grep -v -P '\\*\t0\t0\t\\*|@|-'| cut -f 1,9 | awk '!x[\$0]++'|awk '{a[\$1]=a[\$1]\?a[\$1]\",\"\$2:\$2} END{for(i in a)print i\"\\t\"a[i]}'>$output.sizes";
+my $epcr1="bowtie -f -S -p $thread -a -X $product -v $mismatch $db -1 $input\_1.fa -2 $input\_2.fa | tee $output.sam | grep -v -P '\\*\t0\t0\t\\*|@|-' | cut -f 1,9 | awk '!x[\$0]++'|awk '{a[\$1]=a[\$1]\?a[\$1]\",\"\$2:\$2} END{for(i in a)print i\"\\t\"a[i]}'>>$output.sizes";
+my $epcr2="bowtie -f -S -p $thread -a -X $product -v $mismatch db\/$list2[0] -1 $input\_1.fa -2 $input\_2.fa | tee $output.sam | grep -v -P '\\*\t0\t0\t\\*|@|-'| cut -f 1,9 | awk '!x[\$0]++'|awk '{a[\$1]=a[\$1]\?a[\$1]\",\"\$2:\$2} END{for(i in a)print i\"\\t\"a[i]}'>>$output.sizes";
 
 #print head
 `touch $output.sizes`;
