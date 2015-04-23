@@ -3,9 +3,11 @@
 ### Version 0.2.0 04/23/2015
 
 - Added multi-samples InDel detecting.
-- Added two main program. mInDel_pair was designed for two samples; mInDel_pop was designed for multi-samples
-- Added dependencies checking script.
-- Added non root install script.
+- Added two main program. 
+ - mInDel_pair was designed for two samples;
+ - mInDel_pop was designed for multi-samples
+- Added dependencies checking script `sh check_deps.sh`.
+- Added non-root user install script `sh install_nonroot.sh`.
 - More summary information is added, such as position information for per primer pair.
 
 ###Introduction
