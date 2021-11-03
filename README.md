@@ -1,4 +1,4 @@
-##mInDel
+#mInDel
 
 ###Changelog 
 Version 0.2.0 04/23/2015
@@ -34,4 +34,6 @@ It was tested on CentOS 6.3 and Ubuntu 12.10 server but it should work on most L
 ### QUESTIONS AND COMMENTS:
 Please send your any comments to Dr. Yuanda Lv, Lyd0527@jaas.ac.cn.
 
+* Lv, Y., Liu, Y. & Zhao, H. mInDel: a high-throughput and efficient pipeline for genome-wide InDel marker development. BMC Genomics 17, 290 (2016). https://doi.org/10.1186/s12864-016-2614-5
 *Copyright (c) 2014, Institute of Biotechnology, Jiangsu Academy of Agricultural Sciences.*
+
