@@ -1,6 +1,6 @@
-#mInDel
+# mInDel
 
-###Changelog 
+### Changelog 
 Version 0.2.0 04/23/2015
 
 - Added multi-samples InDel support.
@@ -11,7 +11,7 @@ Version 0.2.0 04/23/2015
 - Added non-root user install script `sh install_nonroot.sh`.
 - More summary information is added, such as position information for per primer pair.
 
-###Introduction
+### Introduction
 
 mInDel allows to find InDel variations between two or more genotypes and to develop InDel markers. Together with its independence to a reference genome and the downstream genotyping-aware versatility, mInDel holds great values to researchers in the fields of molecular genetics and evolutionary studies. 
 
@@ -35,5 +35,6 @@ It was tested on CentOS 6.3 and Ubuntu 12.10 server but it should work on most L
 Please send your any comments to Dr. Yuanda Lv, Lyd0527@jaas.ac.cn.
 
 * Lv, Y., Liu, Y. & Zhao, H. mInDel: a high-throughput and efficient pipeline for genome-wide InDel marker development. BMC Genomics 17, 290 (2016). https://doi.org/10.1186/s12864-016-2614-5
+
 *Copyright (c) 2014, Institute of Biotechnology, Jiangsu Academy of Agricultural Sciences.*
 
