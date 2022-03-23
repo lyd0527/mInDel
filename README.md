@@ -29,8 +29,6 @@ It was tested on CentOS 6.3 and Ubuntu 12.10 server but it should work on most L
 
 **mInDel workflow.** mInDel generates a pool of probe pairs based on input sequences, infers the sizes in between these probes using improved paired-end mapping algorithm, and screens for polymorphic probes as candidate InDel markers. The pipeline accepts NGS data as input and then proceeds automatically to perform several independent analyses, most of which can be selected or excluded according to the user’s needs. Module 1: Pre-processing analysis. Module 2: De novo assembly (Illumina or 454 sequencing platform). Module 3: Overlap probes design. Module 4: paired-end mapping and specificity screening. Module 5: InDel screening and marker development.
 
-#![workflow](https://github.com/lyd0527/mInDel/blob/master/doc/workflow.png)
-
 ### QUESTIONS AND COMMENTS:
 Please send your any comments to Dr. Yuanda Lv, Lyd0527@jaas.ac.cn.
 
