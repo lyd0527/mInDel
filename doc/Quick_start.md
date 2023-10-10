@@ -1,6 +1,6 @@
-##Quick Start
+## Quick Start
 
-###Pre-assembly Fastq files
+### Pre-assembly Fastq files
 
 - Trimming quality and length
 ```
@@ -17,7 +17,7 @@ de_novo_assembly_illu -d A_raw_fastq/ -i trimmed -s 300 -k 45 -p 20 -o illu_proj
 de_novo_assembly_454 -d A_raw_fastq/ -i 95 -l 40 -p 20 -a 300 -o 454_project
 ```
 
-###InDel marker development
+### InDel marker development
 
 version 0.2.0 updated 04/23/2015
 
