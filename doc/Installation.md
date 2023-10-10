@@ -1,10 +1,10 @@
-##Installation
+## Installation
 
 - updated 04/23/2015
 - added check_deps script. `check_deps.sh`
 - added non-root user install script. `install_nonroot.sh`
 
-###Requirements
+### Requirements
 - Perl http://www.perl.org/
 - SolexaQA http://solexaqa.sourceforge.net/
 - Soapdenovo2 http://sourceforge.net/projects/soapdenovo2/ 
@@ -13,7 +13,7 @@
 - Bowtie http://bowtie-bio.sourceforge.net/
 
 
-###Installation
+### Installation
 Here are the installation instructions for CentOS and Ubuntu Linux system.
 
 **1. Install dependent apps and add them to system path.**
